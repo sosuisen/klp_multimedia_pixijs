@@ -23,7 +23,8 @@ gsap.ticker.add(time => {
   app.ticker.update(); // PixiJSの画面更新
   // 引き続きtimeを使った処理もできる。
   // GSAPのtimeはtickerが開始してからの時間
-  sprites[0].y = 80 + 10 * Math.cos(time*5); // 上下に揺れ
+  // sprites[0].y = 80 + 10 * Math.cos(time*5); // 上下に揺れ
+  sprites[0].alpha = Math.abs(Math.cos(time));
 });
 
 // GSAPのTween が使える
