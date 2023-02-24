@@ -1,4 +1,5 @@
 let app = new PIXI.Application({ width: 640, height: 640 });
+gsap.registerPlugin(PixiPlugin);
 app.ticker.stop();
 document.body.appendChild(app.view);
 
