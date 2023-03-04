@@ -39,7 +39,10 @@ gsap.to(sprites[0], 1, {
 });
 */
 
-// Stagger
+/**
+ * Stagger（重ならないように調整する、の意味）
+ */ 
+
 // scaleやangleのようなサブオブジェクトはpixiプロパティ経由でアクセス
 /*
 gsap.to(sprites, 1, { 
@@ -53,13 +56,13 @@ gsap.to(sprites, 1, {
 
 // Timeline
 
-let tl = gsap.timeline()
-// let tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true })
+const tl = gsap.timeline()
+// const tl = gsap.timeline({ repeat: -1, repeatDelay: 1, yoyo: true })
 tl.to(sprites[0], { x: 480, duration: 1.5, ease: 'power3.out' });
 tl.to(sprites[1], { x: 480, duration: 0.5, delay:0.2, ease: 'power3.out' });
 tl.to(sprites[2], { x: 480, duration: 0.5, ease: 'power3.out' });
 tl.to(sprites[3], { x: 360, duration: 1.0, ease: 'bounce.out' });
 
-// tickerで動かしているアニメは停止しない
+// tickerで動かしているアニメはこのpause()では停止しない
 document.getElementById('pauseBtn').addEventListener('click', () => tl.pause());
 document.getElementById('resumeBtn').addEventListener('click', () => tl.resume());
