@@ -1,5 +1,10 @@
+import * as PIXI from 'pixi.js';
+import { gsap } from "gsap";
+import { PixiPlugin } from "gsap/PixiPlugin.js";
+
 let app = new PIXI.Application({ width: 640, height: 640 });
 gsap.registerPlugin(PixiPlugin);
+
 app.ticker.stop();
 document.body.appendChild(app.view);
 
