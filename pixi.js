@@ -1,10 +1,11 @@
 import * as PIXI from 'pixi.js'
 
-let app = new PIXI.Application({ width: 640, height: 360 });
+const app = new PIXI.Application({ width: 640, height: 360 });
 
+// app.viewはPixiJSの描画先となるcanvas要素
 document.body.appendChild(app.view);
 
-let sprite = PIXI.Sprite.from('kyoco_trans256x256.png');
+const sprite = PIXI.Sprite.from('kyoco_trans256x256.png');
 app.stage.addChild(sprite);
 
 let elapsed = 0.0;
