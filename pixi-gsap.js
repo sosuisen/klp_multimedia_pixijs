@@ -1,9 +1,11 @@
 import * as PIXI from 'pixi.js';
 import { gsap } from "gsap";
-import { PixiPlugin } from "gsap/PixiPlugin.js";
+import { PixiPlugin } from "gsap/PixiPlugin";
+
+gsap.registerPlugin(PixiPlugin); // プラグインを登録
+PixiPlugin.registerPIXI(PIXI); // プラグインへPIXIオブジェクトへの参照を渡す
 
 let app = new PIXI.Application({ width: 640, height: 640 });
-gsap.registerPlugin(PixiPlugin);
 
 app.ticker.stop();
 document.body.appendChild(app.view);
@@ -33,21 +35,22 @@ gsap.ticker.add(time => {
 
 // GSAPのTween が使える
 /*
-gsap.to(sprites[0], 1, { 
+gsap.to(sprites[0], { 
+  duration: 1,
   x: 400,
 });
 */
 
 /**
  * Stagger（重ならないように調整する、の意味）
- */ 
-// scaleやangleのようなサブオブジェクトはpixiプロパティ経由でアクセス
+ */
 /*
-gsap.to(sprites, 1, { 
-  x:200,
+gsap.to(sprites, { 
+  duration: 1,
+  x: 200,
   stagger: 0.5,
   pixi: {
-    angle: 360
+    rotation: 360,
   },
 });
 */
