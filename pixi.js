@@ -1,4 +1,4 @@
-import * as PIXI from 'pixi.js'
+import * as PIXI from 'pixi.js';
 
 const app = new PIXI.Application({ width: 640, height: 360 });
 
