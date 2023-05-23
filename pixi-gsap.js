@@ -12,7 +12,7 @@ const sprites = [];
 const colors = [ 0xffffff, 0xffff70, 0xff7070, 0x70ff70 ];
 for (let i = 0; i < colors.length; i++) {
   // kyoco.png(240x280)
-  let sprite = PIXI.Sprite.from('kyoco.png');
+  let sprite = PIXI.Sprite.from('kyoco_trans256x256.png');
   sprite.x = 100;
   sprite.y = 80 + i * 150;
   sprite.scale.x = 0.5;
