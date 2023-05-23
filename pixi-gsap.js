@@ -34,7 +34,8 @@ gsap.ticker.add(time => {
 
 // GSAPのTween が使える
 /*
-gsap.to(sprites[0], 1, { 
+gsap.to(sprites[0], { 
+  duration: 1,
   x: 400,
 });
 */
@@ -42,7 +43,8 @@ gsap.to(sprites[0], 1, {
 // Stagger
 // scaleやangleのようなサブオブジェクトはpixiプロパティ経由でアクセス
 /*
-gsap.to(sprites, 1, { 
+gsap.to(sprites, { 
+  duration: 1,
   x:200,
   stagger: 0.5,
   pixi: {
