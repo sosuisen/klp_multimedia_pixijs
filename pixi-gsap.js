@@ -4,6 +4,7 @@ import { PixiPlugin } from "gsap/PixiPlugin.js";
 
 let app = new PIXI.Application({ width: 640, height: 640 });
 gsap.registerPlugin(PixiPlugin);
+PixiPlugin.registerPIXI(PIXI);
 
 app.ticker.stop();
 document.body.appendChild(app.view);
@@ -39,6 +40,15 @@ gsap.to(sprites[0], {
   x: 400,
 });
 */
+
+// PixiPluginなしの場合
+/*
+gsap.to(sprites[0].scale, {x:2, y:1.5, duration: 1});
+gsap.to(sprites[0].skew, {x:30 * Math.PI / 180, duration: 1});
+gsap.to(sprites[0], {rotation:60 * Math.PI / 180, duration: 1});
+*/
+// PixiPluginありの場合
+// gsap.to(sprites[0], { pixi: {scaleX: 2, scaleY: 1.5, skewX: 30, rotation: 60}, duration: 1 });
 
 // Stagger
 // scaleやangleのようなサブオブジェクトはpixiプロパティ経由でアクセス
