@@ -51,14 +51,14 @@ gsap.to(sprites[0], {rotation:60 * Math.PI / 180, duration: 1});
 // gsap.to(sprites[0], { pixi: {scaleX: 2, scaleY: 1.5, skewX: 30, rotation: 60}, duration: 1 });
 
 // Stagger
-// scaleやangleのようなサブオブジェクトはpixiプロパティ経由でアクセス
+// scaleやrotationのようなサブオブジェクトはpixiプロパティ経由でアクセス
 /*
 gsap.to(sprites, { 
   duration: 1,
   x:200,
   stagger: 0.5,
   pixi: {
-    angle: 360
+    rotation: 360
   },
 });
 */
